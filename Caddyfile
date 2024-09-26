@@ -1,0 +1,7 @@
+tls {
+	acmd_dns cloudflare {env.CF_API_TOKEN}
+}
+
+git.budai.cz {
+    reverse_proxy gitea
+}
