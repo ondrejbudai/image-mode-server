@@ -1,0 +1,3 @@
+Match User git
+  AuthorizedKeysCommandUser git
+  AuthorizedKeysCommand sudo podman exec -i -u git gitea /usr/local/bin/gitea keys -c /data/gitea/conf/app.ini -e git -u %u -t %t -k %k
