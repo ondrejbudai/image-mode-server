@@ -10,7 +10,7 @@ PublishPort=80:80
 PublishPort=443:443
 PublishPort=443:443/udp
 Volume=caddy-data:/data:Z
-Volume=/usr/share/Caddyfile:/etc/caddy/Caddyfile:Z,ro
+Volume=/etc/Caddyfile:/etc/caddy/Caddyfile:Z,ro
 EnvironmentFile=/etc/caddyenv
 Network=main.network
 
