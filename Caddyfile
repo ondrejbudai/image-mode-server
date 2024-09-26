@@ -1,6 +1,8 @@
 *.budai.cz {
 	tls {
 		dns cloudflare {env.CF_API_TOKEN}
+		# We have CNAME from _acme-challenge.budai.cz to _acme-challenge.budaiovi.cz
+		dns_challenge_override_domain _acme-challenge.budaiovi.cz
 	}
 
 	@git host git.budai.cz
