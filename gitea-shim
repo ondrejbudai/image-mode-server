@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo podman exec -i -u git --env SSH_ORIGINAL_COMMAND="$SSH_ORIGINAL_COMMAND" gitea sh "$@"
+/usr/bin/sudo /usr/bin/podman exec -i -u git --env SSH_ORIGINAL_COMMAND="$SSH_ORIGINAL_COMMAND" gitea sh "$@"
