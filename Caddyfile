@@ -1,7 +1,10 @@
-{
-	acme_dns cloudflare {env.CF_API_TOKEN}
-}
+*.budai.cz {
+	tls {
+		dns cloudflare {env.CF_API_TOKEN}
+	}
 
-git.budai.cz {
-    reverse_proxy gitea
+	@git host git.budai.cz
+	handle @git {
+		reverse_proxy gitea:3000
+	}
 }
