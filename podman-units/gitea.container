@@ -6,9 +6,10 @@ After=network-online.target
 Image=docker.io/gitea/gitea
 ContainerName=gitea
 #AutoUpdate=registry
+PublishPort=127.0.0.1:2222:22
 Volume=gitea-data:/data:Z
 Volume=gitea-config:/etc/gitea:Z
-Volume=/run/git-home/.ssh:/data/git/.ssh:Z
+Volume=/var/home/git/.ssh:/data/git/.ssh:Z
 Network=main.network
 Environment=USER_UID=1500
 Environment=USER_GID=1500

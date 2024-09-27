@@ -7,8 +7,4 @@ COPY podman-units/* /usr/share/containers/systemd/
 COPY Caddyfile /etc/Caddyfile
 
 COPY gitea-shim /usr/local/bin/gitea
-COPY sudoers.d-git /etc/sudoers.d/git
 COPY 99-hardening.conf /etc/ssh/sshd_config.d/
-
-RUN echo "git:x:1500:1500:Gitea user:/run/git-home:/usr/sbin/nologin" | tee -a /usr/lib/passwd && \
-    echo "git:x:1500:" | tee -a /usr/lib/group
