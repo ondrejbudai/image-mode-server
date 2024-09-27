@@ -8,7 +8,7 @@ COPY Caddyfile /etc/Caddyfile
 
 COPY gitea-shim /usr/local/bin/gitea
 COPY sudoers.d-git /etc/sudoers.d/git
-COPY sshd_config-git /etc/ssh/sshd_config.d/99-git.conf
+COPY 99-hardening.conf /etc/ssh/sshd_config.d/
 
-RUN echo "git:x:1500:1500:Gitea user:/usr/share/empty:/usr/sbin/nologin" | tee -a /usr/lib/passwd && \
+RUN echo "git:x:1500:1500:Gitea user:/run/git-home:/usr/sbin/nologin" | tee -a /usr/lib/passwd && \
     echo "git:x:1500:" | tee -a /usr/lib/group

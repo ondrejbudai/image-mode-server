@@ -8,10 +8,16 @@ ContainerName=gitea
 #AutoUpdate=registry
 Volume=gitea-data:/data:Z
 Volume=gitea-config:/etc/gitea:Z
+Volume=/run/git-home/.ssh:/data/git/.ssh:Z
 Network=main.network
+Environment=USER_UID=1500
+Environment=USER_GID=1500
 
 [Service]
 Restart=always
+ExecStartPre=rm -rf /run/git-home
+ExecStartPre=mkdir -p /run/git-home/.ssh
+ExecStartPre=chown -R git:git /run/git-home
 
 [Install]
 WantedBy=multi-user.target
