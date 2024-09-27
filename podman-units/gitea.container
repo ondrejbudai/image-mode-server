@@ -17,6 +17,10 @@ Environment=USER_GID=1500
 Restart=always
 ExecStartPre=rm -rf /run/git-home
 ExecStartPre=mkdir -p /run/git-home/.ssh
+ExecStartPre=touch /run/git-home/.ssh/authorized_keys
+ExecStartPre=chmod 700 /run/git-home
+ExecStartPre=chmod 700 /run/git-home/.ssh
+ExecStartPre=chmod 600 /run/git-home/.ssh/authorized_keys
 ExecStartPre=chown -R git:git /run/git-home
 
 [Install]
