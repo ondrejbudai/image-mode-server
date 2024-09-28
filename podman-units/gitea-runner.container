@@ -9,7 +9,7 @@ Environment=GITEA_INSTANCE_URL=https://git.budai.cz
 Environment=CONFIG_FILE=/config.yaml
 EnvironmentFile=/etc/gitea-runner-env
 Volume=/etc/config.yaml:/config.yaml:ro,Z
-Volume=/run/podman/podman.sock:/var/run/docker.sock
+Volume=/run/podman/podman.sock:/var/run/docker.sock:z
 Network=main.network
 
 [Install]
