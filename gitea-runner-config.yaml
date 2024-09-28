@@ -3,5 +3,5 @@ runner:
     - ubuntu-latest:docker://ghcr.io/ondrejbudai/podman-runner:latest
 
 container:
-  options: --security-opt seccomp=unconfined --device=/dev/fuse --security-opt label=disable
+  privileged: true
   network: systemd-main
