@@ -10,6 +10,7 @@ Environment=CONFIG_FILE=/config.yaml
 EnvironmentFile=/etc/gitea-runner-env
 Volume=/etc/config.yaml:/config.yaml:ro,Z
 Volume=/run/podman/podman.sock:/var/run/docker.sock
+Network=main.network
 
 [Install]
 WantedBy=multi-user.target
