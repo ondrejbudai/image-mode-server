@@ -7,6 +7,7 @@ Image=docker.io/gitea/act_runner:latest
 ContainerName=gitea-runner
 Environment=GITEA_INSTANCE_URL=https://git.budai.cz
 Environment=CONFIG_FILE=/config.yaml
+Environment=GITEA_RUNNER_NAME=main
 EnvironmentFile=/etc/gitea-runner-env
 Volume=/etc/config.yaml:/config.yaml:ro
 Volume=/run/podman/podman.sock:/var/run/docker.sock
