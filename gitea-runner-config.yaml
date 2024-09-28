@@ -3,5 +3,5 @@ runner:
     - ubuntu-latest:docker://ghcr.io/ondrejbudai/podman-runner:latest
 
 container:
-  options: --pull=newer --cap-add=sys_admin,mknod --device=/dev/fuse --security-opt label=disable
+  options: --pull=always --cap-add=sys_admin,mknod --device=/dev/fuse --security-opt label=disable
   network: systemd-main
