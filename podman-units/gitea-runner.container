@@ -5,7 +5,7 @@ After=network-online.target
 [Container]
 Image=docker.io/gitea/act_runner:latest
 ContainerName=gitea-runner
-Environment=GITEA_INSTANCE_URL=git.budai.cz
+Environment=GITEA_INSTANCE_URL=https://git.budai.cz
 Environment=CONFIG_FILE=/config.yaml
 EnvironmentFile=/etc/gitea-runner-env
 Volume=/etc/config.yaml:/config.yaml:ro,Z
