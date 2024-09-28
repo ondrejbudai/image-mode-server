@@ -8,9 +8,10 @@ ContainerName=gitea-runner
 Environment=GITEA_INSTANCE_URL=https://git.budai.cz
 Environment=CONFIG_FILE=/config.yaml
 EnvironmentFile=/etc/gitea-runner-env
-Volume=/etc/config.yaml:/config.yaml:ro,Z
-Volume=/run/podman/podman.sock:/var/run/docker.sock:z
+Volume=/etc/config.yaml:/config.yaml:ro
+Volume=/run/podman/podman.sock:/var/run/docker.sock
 Network=main.network
+SecurityLabelDisable=true
 
 [Install]
 WantedBy=multi-user.target
