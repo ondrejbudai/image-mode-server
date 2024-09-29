@@ -6,9 +6,6 @@ on:
       - main
     paths-ignore:
       - "docs/**"
-#  workflow_dispatch:
-  schedule:
-    - cron: '35 6 * * *'
   push:
     branches:
       - main
