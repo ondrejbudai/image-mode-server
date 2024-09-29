@@ -1,8 +1,7 @@
 runner:
   labels:
-    - ubuntu-latest:docker://ghcr.io/ondrejbudai/podman-runner:latest
+    - ubuntu-latest:docker://ghcr.io/ondrejbudai/podman-runner:2024-09-28
 
 container:
-  privileged: true
-  options: --volume /var/lib/containers/storage
+  options: --security-opt seccomp=unconfined --device=/dev/fuse --security-opt label=disable
   network: systemd-main
